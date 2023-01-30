@@ -50,6 +50,9 @@
 				},
 				{
 					"name": "aggregate1"
+				},
+				{
+					"name": "split1"
 				}
 			],
 			"scriptLines": [
@@ -73,7 +76,7 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> join1",
-				"join1 select(mapColumn(",
+				"split1@join1 select(mapColumn(",
 				"          salary,",
 				"          empid,",
 				"          name,",
@@ -86,6 +89,8 @@
 				"ModifyColumns2 derive(band = case(salary<50000,'low','high')) ~> ModifyColumns3",
 				"ModifyColumns3 aggregate(groupBy(department),",
 				"     salary_tot = sum(salary)) ~> aggregate1",
+				"join1 split(isNull(department),",
+				"     disjoint: false) ~> split1@(join1)",
 				"aggregate1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
