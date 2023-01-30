@@ -90,7 +90,7 @@
 				"ModifyColumns3 aggregate(groupBy(department),",
 				"     salary_tot = sum(salary)) ~> aggregate1",
 				"join1 split(isNull(department),",
-				"     disjoint: false) ~> split1@(join1)",
+				"     disjoint: true) ~> split1@(join1)",
 				"aggregate1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
