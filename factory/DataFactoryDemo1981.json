@@ -1,0 +1,9 @@
+{
+	"name": "DataFactoryDemo1981",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "3ded8dce-f393-4e24-a9c3-516bc2276cf7",
+		"tenantId": "abd7fd09-ece5-47dd-b1e2-d00bf024a94b"
+	}
+}

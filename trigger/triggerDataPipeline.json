@@ -1,0 +1,18 @@
+{
+	"name": "triggerDataPipeline",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/source/blobs/",
+			"blobPathEndsWith": ".txt",
+			"ignoreEmptyBlobs": false,
+			"scope": "/subscriptions/534ead13-6b57-475c-b8eb-c27077392d5d/resourceGroups/FataFactoryResourceGroup/providers/Microsoft.Storage/storageAccounts/blosbtoragedatafactory",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
